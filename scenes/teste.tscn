@@ -1,45 +1,47 @@
 [gd_scene format=3 uid="uid://dbirob4cs56jd"]
 
-[ext_resource type="Script" uid="uid://bswrsfdcybful" path="res://scenes/global.gd" id="1_kta4m"]
-[ext_resource type="Texture2D" uid="uid://sexpkchkp43w" path="res://icon.svg" id="2_2gqm3"]
+[ext_resource type="Texture2D" uid="uid://bqsfmsmr5e3bs" path="res://assets/elements/texture_right_button_normal.tres" id="1_8cswh"]
+[ext_resource type="Script" uid="uid://dtontvkyrjrou" path="res://scripts/right_button.gd" id="3_mjdn2"]
+[ext_resource type="Texture2D" uid="uid://7f5clu2hv7p" path="res://assets/elements/texture_left_button_normal.tres" id="4_375g6"]
+[ext_resource type="Script" uid="uid://dif6jd6jck4jy" path="res://scripts/left_button.gd" id="5_8cswh"]
 
 [node name="Teste" type="Node2D" unique_id=451631582]
-script = ExtResource("1_kta4m")
 metadata/_edit_horizontal_guides_ = [77.0]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=629220860]
 
 [node name="Control" type="Control" parent="CanvasLayer" unique_id=89468560]
 layout_mode = 3
-anchors_preset = 12
-anchor_top = 1.0
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -400.0
 grow_horizontal = 2
-grow_vertical = 0
+grow_vertical = 2
 
-[node name="TextureButton" type="TextureButton" parent="CanvasLayer/Control" unique_id=374745688]
+[node name="right_button" type="TextureButton" parent="CanvasLayer/Control" unique_id=374745688]
 layout_mode = 1
-anchors_preset = 6
-anchor_left = 1.0
-anchor_top = 0.5
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.3
 anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -100.0
-offset_top = -50.0
-offset_bottom = 50.0
+anchor_bottom = 1.0
 grow_horizontal = 0
 grow_vertical = 2
-texture_normal = ExtResource("2_2gqm3")
+texture_normal = ExtResource("1_8cswh")
+stretch_mode = 0
+script = ExtResource("3_mjdn2")
 
-[node name="TextureButton2" type="TextureButton" parent="CanvasLayer/Control" unique_id=296635656]
+[node name="left_button" type="TextureButton" parent="CanvasLayer/Control" unique_id=296635656]
 layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_top = -50.0
-offset_right = 100.0
-offset_bottom = 50.0
-grow_vertical = 2
-texture_normal = ExtResource("2_2gqm3")
+anchors_preset = -1
+anchor_top = 0.3
+anchor_right = 0.5
+anchor_bottom = 1.0
+texture_normal = ExtResource("4_375g6")
+stretch_mode = 0
+script = ExtResource("5_8cswh")
+
+[connection signal="button_down" from="CanvasLayer/Control/right_button" to="CanvasLayer/Control/right_button" method="_on_button_down"]
+[connection signal="button_up" from="CanvasLayer/Control/right_button" to="CanvasLayer/Control/right_button" method="_on_button_up"]
+[connection signal="button_down" from="CanvasLayer/Control/left_button" to="CanvasLayer/Control/left_button" method="_on_button_down"]
+[connection signal="button_up" from="CanvasLayer/Control/left_button" to="CanvasLayer/Control/left_button" method="_on_button_up"]
