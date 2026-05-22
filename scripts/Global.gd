@@ -5,18 +5,31 @@ const BLACK = Color(0, 0, 0, 1)
 const RED = Color(1, 0, 0.33, 1)
 const BLUE = Color(0.33, 0, 1, 1)
 
-# Constantes gameplay
+# Consts e vars gameplay
+const song_teste_array = [1, 0, 0, 0, 1, 0, 0, 0]
+const error_margin = 5
+const element_speed = 100
+# Musica 1
+var musica1 = {
+	"bpm": 140,
+	"duracao": 111,
+	"path": "res://assets/songs/korobeiniki.mp3",
+	"array": [1, 0, 0, 0, 1, 0, 0, 0],
+}
+var total_beats1 = (musica1.duracao/60.0)*musica1.bpm
+var time_per_bit1 = musica1.duracao/total_beats1
+var time_per_bit_margin1 = time_per_bit1/100.0 * error_margin
 
 # Constantes save
 const FILE_PATH = "user://saveData.json"
 const SAVE_BASE: Dictionary = {
 	"level": 0,
-	"scores": [-1, -1, -1, -1]
+	"scores": [-1, -1, -1]
 }
 
 # Variaveis
 var level: int = 0
-var scores = [-1, -1, -1, -1]
+var scores = [-1, -1, -1]
 
 # Funcoes de estetica
 func mudar_cor_ponto_0(cor: Color, gradiente: Gradient):
