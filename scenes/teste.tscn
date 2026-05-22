@@ -1,11 +1,15 @@
 [gd_scene format=3 uid="uid://dbirob4cs56jd"]
 
+[ext_resource type="Script" uid="uid://dbl3mjnhhs0ia" path="res://scripts/gameplay.gd" id="1_6cgey"]
 [ext_resource type="Texture2D" uid="uid://bqsfmsmr5e3bs" path="res://assets/elements/texture_right_button_normal.tres" id="1_8cswh"]
 [ext_resource type="Script" uid="uid://dtontvkyrjrou" path="res://scripts/right_button.gd" id="3_mjdn2"]
 [ext_resource type="Texture2D" uid="uid://7f5clu2hv7p" path="res://assets/elements/texture_left_button_normal.tres" id="4_375g6"]
 [ext_resource type="Script" uid="uid://dif6jd6jck4jy" path="res://scripts/left_button.gd" id="5_8cswh"]
+[ext_resource type="Script" uid="uid://852rlkgnkklt" path="res://scripts/Init.gd" id="6_6cgey"]
+[ext_resource type="AudioStream" uid="uid://glu5i3emjy4f" path="res://assets/songs/korobeiniki.mp3" id="6_mjdn2"]
 
-[node name="Teste" type="Node2D" unique_id=451631582]
+[node name="Gameplay" type="Node2D" unique_id=451631582]
+script = ExtResource("1_6cgey")
 metadata/_edit_horizontal_guides_ = [77.0]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=629220860]
@@ -40,6 +44,28 @@ anchor_bottom = 1.0
 texture_normal = ExtResource("4_375g6")
 stretch_mode = 0
 script = ExtResource("5_8cswh")
+
+[node name="campo_tempo" type="ColorRect" parent="CanvasLayer/Control" unique_id=1080795019]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.1
+anchor_right = 1.0
+anchor_bottom = 0.2
+color = Color(0.7442779, 0.7315388, 1, 1)
+
+[node name="line" type="ColorRect" parent="CanvasLayer/Control/campo_tempo" unique_id=335469337]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.48
+anchor_right = 1.0
+anchor_bottom = 0.52
+color = Color(0.08366973, 0.021391047, 0.12555072, 1)
+
+[node name="AudioPlayer" type="AudioStreamPlayer2D" parent="." unique_id=591978193]
+stream = ExtResource("6_mjdn2")
+
+[node name="Node" type="Node" parent="." unique_id=1016419998]
+script = ExtResource("6_6cgey")
 
 [connection signal="button_down" from="CanvasLayer/Control/right_button" to="CanvasLayer/Control/right_button" method="_on_button_down"]
 [connection signal="button_up" from="CanvasLayer/Control/right_button" to="CanvasLayer/Control/right_button" method="_on_button_up"]

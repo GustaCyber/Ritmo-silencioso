@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://cvmgms7v7cpng"]
+
+[ext_resource type="Texture2D" uid="uid://dk6xbtvaaas6p" path="res://assets/sprites/elemento1.png" id="1_0xve5"]
+[ext_resource type="Script" uid="uid://efcffau60f2w" path="res://scripts/element.gd" id="1_wiq65"]
+[ext_resource type="Texture2D" uid="uid://dws2d8mj8ca3b" path="res://assets/sprites/elemento2.png" id="2_wiq65"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ut6yo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_0xve5")
+}],
+"loop": true,
+"name": &"blue",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_wiq65")
+}],
+"loop": true,
+"name": &"red",
+"speed": 5.0
+}]
+
+[node name="element" type="CharacterBody2D" unique_id=1319022191]
+z_index = 1
+z_as_relative = false
+script = ExtResource("1_wiq65")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1137452298]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_ut6yo")
+animation = &"blue"
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1634303380]
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

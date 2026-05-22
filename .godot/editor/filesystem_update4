@@ -1,5 +1,7 @@
 res://scenes/teste.tscn
 res://assets/elements/texture_right_button_normal.tres
 res://assets/elements/texture_left_button_normal.tres
-res://scripts/Init.gd
+res://scripts/gameplay.gd
 res://scripts/Global.gd
+res://scenes/element.tscn
+res://scripts/element.gd

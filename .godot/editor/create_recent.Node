@@ -1,1 +1,10 @@
+VisibleOnScreenNotifier2D
+ColorRect
+Node
+AudioStreamPlayer2D
+AnimatedSprite2D
+Sprite2D
+CharacterBody2D
+RichTextLabel
+TextureRect
 Parallax2D

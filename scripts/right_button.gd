@@ -12,6 +12,11 @@ func _ready() -> void:
 		gradiente.set_color(0, GlobalGD.RED)
 		gradiente.set_color(1, GlobalGD.BLACK)
 
+func animar(id:int):
+	if (id == 1):
+		GlobalGD.animar_gradiente(GlobalGD.BLACK, GlobalGD.RED, gradiente, trans_duration)
+	else:
+		GlobalGD.animar_gradiente(GlobalGD.RED, GlobalGD.BLACK, gradiente, trans_duration)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
