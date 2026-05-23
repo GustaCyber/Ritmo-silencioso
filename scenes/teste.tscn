@@ -23,6 +23,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="right_button" type="TextureButton" parent="CanvasLayer/Control" unique_id=374745688]
+z_as_relative = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.5
@@ -36,6 +37,7 @@ stretch_mode = 0
 script = ExtResource("3_mjdn2")
 
 [node name="left_button" type="TextureButton" parent="CanvasLayer/Control" unique_id=296635656]
+z_as_relative = false
 layout_mode = 1
 anchors_preset = -1
 anchor_top = 0.3
@@ -61,8 +63,17 @@ anchor_right = 1.0
 anchor_bottom = 0.52
 color = Color(0.08366973, 0.021391047, 0.12555072, 1)
 
+[node name="line2" type="ColorRect" parent="CanvasLayer/Control/campo_tempo" unique_id=2107823625]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.495
+anchor_right = 0.505
+anchor_bottom = 1.0
+color = Color(0.08235294, 0.019607844, 0.1254902, 1)
+
 [node name="AudioPlayer" type="AudioStreamPlayer2D" parent="." unique_id=591978193]
 stream = ExtResource("6_mjdn2")
+volume_db = 10.0
 
 [node name="Node" type="Node" parent="." unique_id=1016419998]
 script = ExtResource("6_6cgey")

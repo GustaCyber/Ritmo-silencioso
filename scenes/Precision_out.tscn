@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://cljnc2bwvla1m"]
+
+[ext_resource type="Script" uid="uid://dlpusk5pxib1g" path="res://scripts/precision_out.gd" id="1_xc8k4"]
+[ext_resource type="Texture2D" uid="uid://cyvpus0jmkf2u" path="res://assets/sprites/hand1.png" id="1_xj532"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8ytie"]
+atlas = ExtResource("1_xj532")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_im8u8"]
+atlas = ExtResource("1_xj532")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w8l1l"]
+atlas = ExtResource("1_xj532")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mjdn2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8ytie")
+}],
+"loop": true,
+"name": &"A",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_im8u8")
+}],
+"loop": true,
+"name": &"B",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w8l1l")
+}],
+"loop": true,
+"name": &"C",
+"speed": 5.0
+}]
+
+[node name="Precision_out" type="CharacterBody2D" unique_id=2088605573]
+z_index = 1
+z_as_relative = false
+scale = Vector2(2, 2)
+script = ExtResource("1_xc8k4")
+
+[node name="animate" type="AnimatedSprite2D" parent="." unique_id=289463102]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_mjdn2")
+animation = &"A"
+
+[node name="Timer" type="Timer" parent="." unique_id=551048482]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
