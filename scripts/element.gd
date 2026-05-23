@@ -4,10 +4,10 @@ extends CharacterBody2D
 @onready var anim = get_node("AnimatedSprite2D")
 
 # Constantes
-const speed = GlobalGD.element_speed
 
 # Variaveis
 var is_red = false
+var speed = 100
 
 func _ready() -> void:
 	if (is_red):
@@ -21,6 +21,3 @@ func _physics_process(delta: float) -> void:
 
 func eliminate():
 	self.queue_free()
-
-func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
-	queue_free()
