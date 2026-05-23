@@ -31,7 +31,7 @@ script = ExtResource("1_wiq65")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1137452298]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_ut6yo")
-animation = &"blue"
+animation = &"red"
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1634303380]
 

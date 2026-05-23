@@ -8,13 +8,16 @@ const BLUE = Color(0.33, 0, 1, 1)
 # Consts e vars gameplay
 const song_teste_array = [1, 0, 0, 0, 1, 0, 0, 0]
 const error_margin = 5
+const prec_margin_A = 7
+const prec_margin_B = 15
 const element_speed = 100
+const default_element_pos = 200
 # Musica 1
 var musica1 = {
 	"bpm": 140,
 	"duracao": 111,
 	"path": "res://assets/songs/korobeiniki.mp3",
-	"array": [1, 0, 0, 0, 1, 0, 0, 0],
+	"array": [1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0],
 }
 var total_beats1 = (musica1.duracao/60.0)*musica1.bpm
 var time_per_bit1 = musica1.duracao/total_beats1
@@ -44,6 +47,10 @@ func animar_gradiente(corA: Color, corB: Color, gradiente: Gradient, duration: f
 	tween.tween_method(mudar_cor_ponto_1.bind(gradiente), gradiente.get_color(1), corB, duration)
 
 # Funcoes de gameplay
+
+func get_screen_size():
+	var screen_size = DisplayServer.screen_get_size()
+	return screen_size
 
 # Funcoes de save
 func novo_jogo():
