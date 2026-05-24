@@ -2,7 +2,7 @@ extends Node
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	var data = GlobalGD.capturar_estado_salvo()
+	var data = GlobalGD.capturar_estado_salvo(GlobalGD.FILE_PATH)
 	if (data != null):
 		GlobalGD.level = data.level
 		GlobalGD.scores = data.scores

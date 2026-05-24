@@ -1,5 +1,7 @@
 extends TextureButton
 
+@onready var gameplay = self.get_node("../../../../Gameplay")
+
 @export var trans_duration: float = 0.2
 var gradiente: Gradient
 
@@ -26,6 +28,8 @@ func _process(delta: float) -> void:
 
 func _on_button_down() -> void:
 	GlobalGD.animar_gradiente(GlobalGD.BLACK, GlobalGD.BLUE, gradiente, trans_duration)
+	if (gameplay.init):
+		gameplay.get_buttons(0)
 
 func _on_button_up() -> void:
 	GlobalGD.animar_gradiente(GlobalGD.BLUE, GlobalGD.BLACK, gradiente, trans_duration)

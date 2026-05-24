@@ -8,6 +8,19 @@
 [ext_resource type="Script" uid="uid://852rlkgnkklt" path="res://scripts/Init.gd" id="6_6cgey"]
 [ext_resource type="AudioStream" uid="uid://glu5i3emjy4f" path="res://assets/songs/korobeiniki.mp3" id="6_mjdn2"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mjdn2"]
+bg_color = Color(0.091472216, 0.00010413088, 0.2613812, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_375g6"]
+bg_color = Color(1, 0, 0.27450982, 1)
+
+[sub_resource type="Theme" id="Theme_8ytie"]
+ProgressBar/styles/background = SubResource("StyleBoxFlat_mjdn2")
+ProgressBar/styles/fill = SubResource("StyleBoxFlat_375g6")
+
+[sub_resource type="Theme" id="Theme_im8u8"]
+Label/font_sizes/font_size = 40
+
 [node name="Gameplay" type="Node2D" unique_id=451631582]
 script = ExtResource("1_6cgey")
 metadata/_edit_horizontal_guides_ = [77.0]
@@ -70,12 +83,36 @@ anchor_right = 0.505
 anchor_bottom = 1.0
 color = Color(0.08235294, 0.019607844, 0.1254902, 1)
 
+[node name="LifeBar" type="ProgressBar" parent="CanvasLayer/Control" unique_id=1969256668]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 27.0
+grow_horizontal = 2
+theme = SubResource("Theme_8ytie")
+value = 100.0
+
+[node name="Label" type="Label" parent="CanvasLayer/Control" unique_id=1026330333]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.48
+anchor_top = 0.2
+anchor_right = 0.52
+anchor_bottom = 0.25
+theme = SubResource("Theme_im8u8")
+text = "3"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="AudioPlayer" type="AudioStreamPlayer2D" parent="." unique_id=591978193]
 stream = ExtResource("6_mjdn2")
 volume_db = 10.0
 
 [node name="Node" type="Node" parent="." unique_id=1016419998]
 script = ExtResource("6_6cgey")
+
+[node name="Timer" type="Timer" parent="." unique_id=1911424102]
+one_shot = true
 
 [connection signal="button_down" from="CanvasLayer/Control/right_button" to="CanvasLayer/Control/right_button" method="_on_button_down"]
 [connection signal="button_up" from="CanvasLayer/Control/right_button" to="CanvasLayer/Control/right_button" method="_on_button_up"]

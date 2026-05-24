@@ -8,17 +8,13 @@ const BLUE = Color(0.33, 0, 1, 1)
 # Consts e vars gameplay
 const song_teste_array = [1, 0, 0, 0, 1, 0, 0, 0]
 const error_margin = 5
-const prec_margin_A = 15
-const prec_margin_B = 20
+const prec_margin_A = 5
+const prec_margin_B = 15
 const element_speed = 100
+const desconto = 10
 
 # Musica 1
-var musica1 = {
-	"bpm": 140,
-	"duracao": 111,
-	"path": "res://assets/songs/korobeiniki.mp3",
-	"array": [1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0],
-}
+var musica1 = capturar_estado_salvo("res://assets/default_saves/musica1.json")
 var total_beats1 = (musica1.duracao/60.0)*musica1.bpm
 var time_per_bit1 = musica1.duracao/total_beats1
 var time_per_bit_margin1 = time_per_bit1/100.0 * error_margin
@@ -66,9 +62,9 @@ func salvar_estado_atual():
 	file.store_string(jstr)
 	file.close()
 
-func capturar_estado_salvo():
-	if (FileAccess.file_exists(FILE_PATH)):
-		var file = FileAccess.open(FILE_PATH, FileAccess.READ)
+func capturar_estado_salvo(path):
+	if (FileAccess.file_exists(path)):
+		var file = FileAccess.open(path, FileAccess.READ)
 		var content = file.get_as_text()
 		return JSON.parse_string(content)
 	else:
