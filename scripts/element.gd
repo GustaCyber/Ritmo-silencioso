@@ -8,6 +8,7 @@ extends CharacterBody2D
 # Variaveis
 var is_red = false
 var speed = 100
+var time
 
 func _ready() -> void:
 	if (is_red):
