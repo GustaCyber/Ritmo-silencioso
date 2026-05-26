@@ -1,5 +1,5 @@
-res://scenes/teste.tscn
+res://scenes/element.tscn
 res://assets/elements/texture_right_button_normal.tres
 res://assets/elements/texture_left_button_normal.tres
-res://scripts/gameplay.gd
-res://assets/default_saves/musica1.json
+res://scenes/menu_fases.tscn
+res://scenes/menu_inicial.tscn

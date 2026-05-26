@@ -1,0 +1,148 @@
+[gd_scene format=3 uid="uid://cyaltx665gr12"]
+
+[ext_resource type="Texture2D" uid="uid://b62ib0umxtte3" path="res://assets/sprites/buttons_icons3.png" id="1_kaky3"]
+[ext_resource type="Texture2D" uid="uid://byr8j40x0gawm" path="res://assets/sprites/buttons_icons6.png" id="2_iqmxu"]
+[ext_resource type="Texture2D" uid="uid://bob10h0lvcfyf" path="res://assets/sprites/buttons_icons4.png" id="3_o1721"]
+[ext_resource type="Texture2D" uid="uid://cixbc12ki1ehm" path="res://assets/sprites/buttons_icons5.png" id="4_ty1ha"]
+[ext_resource type="Texture2D" uid="uid://d2x70agxgib2k" path="res://assets/sprites/buttons_icons2.png" id="5_3a04w"]
+
+[node name="Menu_fases" type="Control" unique_id=1206301607]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Fase1_btn" type="Button" parent="." unique_id=859554527]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.1
+anchor_top = 0.2
+anchor_right = 0.25
+anchor_bottom = 0.7
+offset_right = 8.0
+offset_bottom = 8.0
+icon = ExtResource("1_kaky3")
+icon_alignment = 1
+expand_icon = true
+
+[node name="star1" type="TextureRect" parent="Fase1_btn" unique_id=710405060]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.8
+anchor_right = 0.32
+anchor_bottom = 1.0
+texture = ExtResource("2_iqmxu")
+
+[node name="star2" type="TextureRect" parent="Fase1_btn" unique_id=1355299728]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.33
+anchor_top = 0.8
+anchor_right = 0.66
+anchor_bottom = 1.0
+texture = ExtResource("2_iqmxu")
+
+[node name="star3" type="TextureRect" parent="Fase1_btn" unique_id=552920086]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.675
+anchor_top = 0.8
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource("2_iqmxu")
+
+[node name="Fase2_btn" type="Button" parent="." unique_id=2109239682]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.425
+anchor_top = 0.2
+anchor_right = 0.575
+anchor_bottom = 0.7
+offset_right = 8.0
+offset_bottom = 8.0
+icon = ExtResource("3_o1721")
+icon_alignment = 1
+expand_icon = true
+
+[node name="star1" type="TextureRect" parent="Fase2_btn" unique_id=1729417909]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.8
+anchor_right = 0.32
+anchor_bottom = 1.0
+texture = ExtResource("2_iqmxu")
+
+[node name="star2" type="TextureRect" parent="Fase2_btn" unique_id=228698394]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.33
+anchor_top = 0.8
+anchor_right = 0.66
+anchor_bottom = 1.0
+texture = ExtResource("2_iqmxu")
+
+[node name="star3" type="TextureRect" parent="Fase2_btn" unique_id=247617675]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.675
+anchor_top = 0.8
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource("2_iqmxu")
+
+[node name="Fase3_btn" type="Button" parent="." unique_id=286038973]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.75
+anchor_top = 0.2
+anchor_right = 0.9
+anchor_bottom = 0.7
+offset_right = 8.0
+offset_bottom = 8.0
+icon = ExtResource("4_ty1ha")
+icon_alignment = 1
+expand_icon = true
+
+[node name="star1" type="TextureRect" parent="Fase3_btn" unique_id=1998182248]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.8
+anchor_right = 0.32
+anchor_bottom = 1.0
+texture = ExtResource("2_iqmxu")
+
+[node name="star2" type="TextureRect" parent="Fase3_btn" unique_id=130657782]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.33
+anchor_top = 0.8
+anchor_right = 0.66
+anchor_bottom = 1.0
+texture = ExtResource("2_iqmxu")
+
+[node name="star3" type="TextureRect" parent="Fase3_btn" unique_id=1969324428]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.675
+anchor_top = 0.8
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource("2_iqmxu")
+
+[node name="Voltar_btn" type="Button" parent="." unique_id=1482240104]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.05
+anchor_top = 0.05
+anchor_right = 0.15
+anchor_bottom = 0.15
+icon = ExtResource("5_3a04w")
+icon_alignment = 1
+expand_icon = true
+metadata/_edit_use_anchors_ = true
