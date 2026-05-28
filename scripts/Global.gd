@@ -7,11 +7,12 @@ const BLUE = Color(0.33, 0, 1, 1)
 
 # Consts e vars gameplay
 const song_teste_array = [1, 0, 0, 0, 1, 0, 0, 0]
-const error_margin = 5
+const error_margin = 7
 const prec_margin_A = 5
 const prec_margin_B = 15
 const element_speed = 100
 const desconto = 10
+const cooldown = 0.2
 
 # Musica 1
 var musica1 = capturar_estado_salvo("res://assets/default_saves/musica1.json")

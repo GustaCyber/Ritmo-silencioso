@@ -8,3 +8,5 @@ func _ready() -> void:
 		GlobalGD.scores = data.scores
 	else:
 		GlobalGD.novo_jogo()
+		GlobalGD.level = GlobalGD.SAVE_BASE.level
+		GlobalGD.scores = GlobalGD.SAVE_BASE.scores

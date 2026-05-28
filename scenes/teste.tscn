@@ -106,15 +106,15 @@ vertical_alignment = 1
 
 [node name="AudioPlayer" type="AudioStreamPlayer2D" parent="." unique_id=591978193]
 stream = ExtResource("6_mjdn2")
-volume_db = 10.0
+volume_db = -80.0
 
 [node name="Node" type="Node" parent="." unique_id=1016419998]
 script = ExtResource("6_6cgey")
 
 [node name="Timer" type="Timer" parent="." unique_id=1911424102]
-one_shot = true
 
 [connection signal="button_down" from="CanvasLayer/Control/right_button" to="CanvasLayer/Control/right_button" method="_on_button_down"]
 [connection signal="button_up" from="CanvasLayer/Control/right_button" to="CanvasLayer/Control/right_button" method="_on_button_up"]
 [connection signal="button_down" from="CanvasLayer/Control/left_button" to="CanvasLayer/Control/left_button" method="_on_button_down"]
 [connection signal="button_up" from="CanvasLayer/Control/left_button" to="CanvasLayer/Control/left_button" method="_on_button_up"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
