@@ -31,4 +31,8 @@ script = ExtResource("1_wiq65")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1137452298]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_ut6yo")
-animation = &"red"
+animation = &"blue"
+
+[node name="Timer" type="Timer" parent="." unique_id=788494339]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

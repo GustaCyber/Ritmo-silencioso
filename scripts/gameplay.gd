@@ -106,8 +106,7 @@ func create_elements():
 			elements[-1].speed = speed
 			elements[-1].time = get_next_bit2()
 			linha.add_child(elements[-1])
-	else:
-		is_generated = false
+			timer.start(GlobalGD.cooldown)
 
 func vibrate():
 	var next_bit_time = get_next_bit2() - tempo_atual
@@ -181,3 +180,7 @@ func _process(delta: float) -> void:
 	end_elements()
 	get_keys()
 	vibrate()
+
+
+func _on_timer_timeout() -> void:
+	is_generated = false

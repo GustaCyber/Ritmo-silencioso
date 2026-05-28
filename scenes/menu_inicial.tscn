@@ -1,7 +1,10 @@
 [gd_scene format=3 uid="uid://cj6ydn41dw8ir"]
 
 [ext_resource type="Texture2D" uid="uid://c4qlakremf385" path="res://assets/sprites/buttons_icons1.png" id="1_1lqws"]
+[ext_resource type="Script" uid="uid://ca0yjsc2rr4we" path="res://scripts/menu_inicial.gd" id="1_nn1uv"]
 [ext_resource type="Texture2D" uid="uid://d2x70agxgib2k" path="res://assets/sprites/buttons_icons2.png" id="2_eg8ak"]
+[ext_resource type="Texture2D" uid="uid://nc7cur0fqqo5" path="res://assets/sprites/titulo1.png" id="3_eg8ak"]
+[ext_resource type="Script" uid="uid://852rlkgnkklt" path="res://scripts/Init.gd" id="5_twj80"]
 
 [node name="Menu_inicial" type="Control" unique_id=1984316120]
 layout_mode = 3
@@ -10,6 +13,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_nn1uv")
 
 [node name="Play_button" type="Button" parent="." unique_id=2021143719]
 texture_filter = 1
@@ -26,7 +30,7 @@ icon = ExtResource("1_1lqws")
 icon_alignment = 1
 expand_icon = true
 
-[node name="Button" type="Button" parent="." unique_id=815273922]
+[node name="Exit_button" type="Button" parent="." unique_id=815273922]
 texture_filter = 1
 layout_mode = 1
 anchors_preset = -1
@@ -39,3 +43,25 @@ offset_bottom = 8.0
 icon = ExtResource("2_eg8ak")
 icon_alignment = 1
 expand_icon = true
+
+[node name="Titulo" type="TextureRect" parent="." unique_id=1088567232]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.2
+anchor_top = 0.2
+anchor_right = 0.8
+anchor_bottom = 0.4
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("3_eg8ak")
+stretch_mode = 5
+
+[node name="Timer" type="Timer" parent="." unique_id=1692297197]
+
+[node name="Node" type="Node" parent="." unique_id=1451673615]
+script = ExtResource("5_twj80")
+
+[connection signal="button_up" from="Play_button" to="." method="_on_play_button_button_up"]
+[connection signal="button_up" from="Exit_button" to="." method="_on_exit_button_button_up"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

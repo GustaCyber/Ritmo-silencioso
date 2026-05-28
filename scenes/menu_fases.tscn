@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://cyaltx665gr12"]
 
+[ext_resource type="Script" uid="uid://dxp3e0lbf56yi" path="res://scripts/menu_fases.gd" id="1_iqmxu"]
 [ext_resource type="Texture2D" uid="uid://b62ib0umxtte3" path="res://assets/sprites/buttons_icons3.png" id="1_kaky3"]
 [ext_resource type="Texture2D" uid="uid://byr8j40x0gawm" path="res://assets/sprites/buttons_icons6.png" id="2_iqmxu"]
 [ext_resource type="Texture2D" uid="uid://bob10h0lvcfyf" path="res://assets/sprites/buttons_icons4.png" id="3_o1721"]
@@ -13,6 +14,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_iqmxu")
 
 [node name="Fase1_btn" type="Button" parent="." unique_id=859554527]
 texture_filter = 1
@@ -146,3 +148,5 @@ icon = ExtResource("5_3a04w")
 icon_alignment = 1
 expand_icon = true
 metadata/_edit_use_anchors_ = true
+
+[connection signal="button_up" from="Voltar_btn" to="." method="_on_voltar_btn_button_up"]

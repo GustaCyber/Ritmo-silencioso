@@ -1,13 +1,13 @@
-Button
+Node
+Timer
 TextureRect
+Button
 Label
 ProgressBar
-Timer
 CharacterBody2D
 AnimatedSprite2D
 ColorRect
 VisibleOnScreenNotifier2D
-Node
 AudioStreamPlayer2D
 Sprite2D
 RichTextLabel

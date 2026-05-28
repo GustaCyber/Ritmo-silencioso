@@ -1,5 +1,12 @@
-res://scenes/element.tscn
+res://scenes/teste.tscn
 res://assets/elements/texture_right_button_normal.tres
 res://assets/elements/texture_left_button_normal.tres
-res://scenes/menu_fases.tscn
+res://scripts/gameplay.gd
+res://scripts/Global.gd
+res://scenes/element.tscn
+res://scripts/element.gd
 res://scenes/menu_inicial.tscn
+res://scripts/menu_inicial.gd
+res://scenes/menu_fases.tscn
+res://scripts/menu_fases.gd
+res://scripts/Init.gd
