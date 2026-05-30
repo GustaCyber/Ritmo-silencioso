@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Ritmo-silencioso"
-run/main_scene="uid://dbirob4cs56jd"
+run/main_scene="uid://cj6ydn41dw8ir"
 config/features=PackedStringArray("4.6", "Mobile")
 boot_splash/bg_color=Color(0.11879773, 0.00020294331, 0.26820138, 1)
 config/icon="res://icon.svg"

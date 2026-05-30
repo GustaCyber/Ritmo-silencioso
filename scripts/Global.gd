@@ -20,6 +20,18 @@ var total_beats1 = (musica1.duracao/60.0)*musica1.bpm
 var time_per_bit1 = musica1.duracao/total_beats1
 var time_per_bit_margin1 = time_per_bit1/100.0 * error_margin
 
+# Musica 2
+var musica2 = capturar_estado_salvo("res://assets/default_saves/musica2.json")
+var total_beats2 = (musica2.duracao/60.0)*musica2.bpm
+var time_per_bit2 = musica2.duracao/total_beats2
+var time_per_bit_margin2 = time_per_bit2/100.0 * error_margin
+
+# Musica 3
+var musica3 = capturar_estado_salvo("res://assets/default_saves/musica3.json")
+var total_beats3 = (musica3.duracao/60.0)*musica3.bpm
+var time_per_bit3 = musica3.duracao/total_beats3
+var time_per_bit_margin3 = time_per_bit3/100.0 * error_margin
+
 # Constantes save
 const FILE_PATH = "user://saveData.json"
 const SAVE_BASE: Dictionary = {
@@ -29,6 +41,7 @@ const SAVE_BASE: Dictionary = {
 
 # Variaveis
 var level: int = 0
+var current_level: int = 0
 var scores = [-1, -1, -1]
 
 # Funcoes de estetica

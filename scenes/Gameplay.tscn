@@ -1,12 +1,12 @@
 [gd_scene format=3 uid="uid://dbirob4cs56jd"]
 
-[ext_resource type="Script" uid="uid://dbl3mjnhhs0ia" path="res://scripts/gameplay.gd" id="1_6cgey"]
-[ext_resource type="Texture2D" uid="uid://bqsfmsmr5e3bs" path="res://assets/elements/texture_right_button_normal.tres" id="1_8cswh"]
-[ext_resource type="Script" uid="uid://dtontvkyrjrou" path="res://scripts/right_button.gd" id="3_mjdn2"]
-[ext_resource type="Texture2D" uid="uid://7f5clu2hv7p" path="res://assets/elements/texture_left_button_normal.tres" id="4_375g6"]
-[ext_resource type="Script" uid="uid://dif6jd6jck4jy" path="res://scripts/left_button.gd" id="5_8cswh"]
-[ext_resource type="Script" uid="uid://852rlkgnkklt" path="res://scripts/Init.gd" id="6_6cgey"]
-[ext_resource type="AudioStream" uid="uid://glu5i3emjy4f" path="res://assets/songs/korobeiniki.mp3" id="6_mjdn2"]
+[ext_resource type="Script" uid="uid://dbl3mjnhhs0ia" path="res://scripts/gameplay.gd" id="1_4rwr5"]
+[ext_resource type="Texture2D" uid="uid://bqsfmsmr5e3bs" path="res://assets/elements/texture_right_button_normal.tres" id="2_xbw1n"]
+[ext_resource type="Script" uid="uid://dtontvkyrjrou" path="res://scripts/right_button.gd" id="3_hsn8a"]
+[ext_resource type="Texture2D" uid="uid://7f5clu2hv7p" path="res://assets/elements/texture_left_button_normal.tres" id="4_4j5yk"]
+[ext_resource type="Script" uid="uid://dif6jd6jck4jy" path="res://scripts/left_button.gd" id="5_l501g"]
+[ext_resource type="AudioStream" uid="uid://glu5i3emjy4f" path="res://assets/songs/korobeiniki.mp3" id="6_hlv5w"]
+[ext_resource type="Script" uid="uid://852rlkgnkklt" path="res://scripts/Init.gd" id="7_e3rac"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mjdn2"]
 bg_color = Color(0.091472216, 0.00010413088, 0.2613812, 1)
@@ -22,7 +22,7 @@ ProgressBar/styles/fill = SubResource("StyleBoxFlat_375g6")
 Label/font_sizes/font_size = 40
 
 [node name="Gameplay" type="Node2D" unique_id=451631582]
-script = ExtResource("1_6cgey")
+script = ExtResource("1_4rwr5")
 metadata/_edit_horizontal_guides_ = [77.0]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=629220860]
@@ -44,9 +44,9 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 0
 grow_vertical = 2
-texture_normal = ExtResource("1_8cswh")
+texture_normal = ExtResource("2_xbw1n")
 stretch_mode = 0
-script = ExtResource("3_mjdn2")
+script = ExtResource("3_hsn8a")
 
 [node name="left_button" type="TextureButton" parent="CanvasLayer/Control" unique_id=296635656]
 layout_mode = 1
@@ -54,9 +54,9 @@ anchors_preset = -1
 anchor_top = 0.3
 anchor_right = 0.5
 anchor_bottom = 1.0
-texture_normal = ExtResource("4_375g6")
+texture_normal = ExtResource("4_4j5yk")
 stretch_mode = 0
-script = ExtResource("5_8cswh")
+script = ExtResource("5_l501g")
 
 [node name="campo_tempo" type="ColorRect" parent="CanvasLayer/Control" unique_id=1080795019]
 layout_mode = 1
@@ -105,11 +105,11 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="AudioPlayer" type="AudioStreamPlayer2D" parent="." unique_id=591978193]
-stream = ExtResource("6_mjdn2")
+stream = ExtResource("6_hlv5w")
 volume_db = -80.0
 
 [node name="Node" type="Node" parent="." unique_id=1016419998]
-script = ExtResource("6_6cgey")
+script = ExtResource("7_e3rac")
 
 [node name="Timer" type="Timer" parent="." unique_id=1911424102]
 
@@ -117,4 +117,5 @@ script = ExtResource("6_6cgey")
 [connection signal="button_up" from="CanvasLayer/Control/right_button" to="CanvasLayer/Control/right_button" method="_on_button_up"]
 [connection signal="button_down" from="CanvasLayer/Control/left_button" to="CanvasLayer/Control/left_button" method="_on_button_down"]
 [connection signal="button_up" from="CanvasLayer/Control/left_button" to="CanvasLayer/Control/left_button" method="_on_button_up"]
+[connection signal="finished" from="AudioPlayer" to="." method="_on_audio_player_finished"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

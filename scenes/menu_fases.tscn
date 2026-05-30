@@ -149,4 +149,7 @@ icon_alignment = 1
 expand_icon = true
 metadata/_edit_use_anchors_ = true
 
+[connection signal="button_up" from="Fase1_btn" to="." method="_on_fase_1_btn_button_up"]
+[connection signal="button_up" from="Fase2_btn" to="." method="_on_fase_2_btn_button_up"]
+[connection signal="button_up" from="Fase3_btn" to="." method="_on_fase_3_btn_button_up"]
 [connection signal="button_up" from="Voltar_btn" to="." method="_on_voltar_btn_button_up"]

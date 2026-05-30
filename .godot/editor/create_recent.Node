@@ -1,6 +1,8 @@
+AnimationPlayer
+AnimationTree
+TextureRect
 Node
 Timer
-TextureRect
 Button
 Label
 ProgressBar
@@ -10,5 +12,3 @@ ColorRect
 VisibleOnScreenNotifier2D
 AudioStreamPlayer2D
 Sprite2D
-RichTextLabel
-Parallax2D

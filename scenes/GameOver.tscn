@@ -1,0 +1,161 @@
+[gd_scene format=3 uid="uid://dvawn88bsnhi6"]
+
+[ext_resource type="Texture2D" uid="uid://c8sik2soia6jd" path="res://assets/sprites/gameover.png" id="1_qae0b"]
+[ext_resource type="Script" uid="uid://b7xs4c4bw74r4" path="res://scripts/game_over.gd" id="1_vuicl"]
+[ext_resource type="Texture2D" uid="uid://d2x70agxgib2k" path="res://assets/sprites/buttons_icons2.png" id="2_vuicl"]
+
+[sub_resource type="AnimationRootNode" id="AnimationRootNode_4noiy"]
+
+[sub_resource type="Animation" id="Animation_gijjb"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:anchor_left")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.4]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TextureRect:anchor_top")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.2]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("TextureRect:anchor_right")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.59999996]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("TextureRect:anchor_bottom")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.49999994]
+}
+
+[sub_resource type="Animation" id="Animation_88ekj"]
+resource_name = "bounce"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:anchor_left")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.4, 0.39, 0.4]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TextureRect:anchor_top")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.2, 0.19, 0.2]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("TextureRect:anchor_right")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.59999996, 0.61, 0.6]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("TextureRect:anchor_bottom")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.49999994, 0.51, 0.5]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0winm"]
+_data = {
+&"RESET": SubResource("Animation_gijjb"),
+&"bounce": SubResource("Animation_88ekj")
+}
+
+[node name="GameOver" type="Control" unique_id=412878681]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vuicl")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=631701267]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.4
+anchor_top = 0.2
+anchor_right = 0.59999996
+anchor_bottom = 0.49999994
+texture = ExtResource("1_qae0b")
+metadata/_edit_use_anchors_ = true
+
+[node name="Exit_button" type="Button" parent="." unique_id=511693069]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.4
+anchor_top = 0.8
+anchor_right = 0.6
+anchor_bottom = 0.9
+offset_right = 8.0
+offset_bottom = 8.0
+icon = ExtResource("2_vuicl")
+icon_alignment = 1
+expand_icon = true
+
+[node name="AnimationTree" type="AnimationTree" parent="." unique_id=387924462]
+tree_root = SubResource("AnimationRootNode_4noiy")
+anim_player = NodePath("AnimationPlayer")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="AnimationTree" unique_id=1092793319]
+deterministic = true
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_0winm")
+
+[connection signal="button_up" from="Exit_button" to="." method="_on_exit_button_button_up"]

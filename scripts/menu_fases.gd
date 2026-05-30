@@ -13,14 +13,14 @@ var star_tex = load("res://assets/sprites/buttons_icons7.png")
 
 func _ready() -> void:
 	var scores = GlobalGD.scores
-	if (scores[0] >= 0):
+	if (GlobalGD.level > 0):
 		fase2_btn.disabled = false
+		if (GlobalGD.level >= 1):
+			fase3_btn.disabled = false
+		else:
+			fase3_btn.disabled = true
 	else:
 		fase2_btn.disabled = true
-	if (scores[1] >= 0):
-		fase3_btn.disabled = false
-	else:
-		fase3_btn.disabled = true
 	
 	for i in scores[0]:
 		fase1_stars[i].texture = star_tex
@@ -31,3 +31,16 @@ func _ready() -> void:
 
 func _on_voltar_btn_button_up() -> void:
 	get_tree().change_scene_to_file("res://scenes/menu_inicial.tscn")
+
+
+func _on_fase_1_btn_button_up() -> void:
+	GlobalGD.current_level = 0
+	get_tree().change_scene_to_file("res://scenes/Gameplay.tscn")
+
+func _on_fase_2_btn_button_up() -> void:
+	GlobalGD.current_level = 1
+	get_tree().change_scene_to_file("res://scenes/Gameplay.tscn")
+
+func _on_fase_3_btn_button_up() -> void:
+	GlobalGD.current_level = 2
+	get_tree().change_scene_to_file("res://scenes/Gameplay.tscn")

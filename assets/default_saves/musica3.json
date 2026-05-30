@@ -1,6 +1,6 @@
 {
 	"bpm": 140,
-	"duracao": 109,
+	"duracao": 60,
 	"path": "res://assets/songs/korobeiniki.mp3",
 	"array": [1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 1, 0, 0, 0],
 }
