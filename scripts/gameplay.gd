@@ -32,6 +32,7 @@ var vida = 100
 var tempo_atual
 var pos_atual
 var dif
+var total_beats
 
 func _ready() -> void:
 	# Iniciar fase
@@ -39,13 +40,30 @@ func _ready() -> void:
 	future_element_pos = screen_size.x * 0.5 + 8
 	default_element_pos = screen_size.x * 0.3
 	end_element_pos = screen_size.x * 0.7
-	if (GlobalGD.level == 0):
+	if (GlobalGD.current_level == 0):
 		current_music = GlobalGD.musica1
 		time_per_bit = GlobalGD.time_per_bit1
 		speed = 300
 		will_time = (future_element_pos-default_element_pos)/speed
 		dif = ceili(will_time/time_per_bit)
 		tempo_atual = -3 -will_time
+		total_beats = GlobalGD.total_beats1
+	elif (GlobalGD.current_level == 1):
+		current_music = GlobalGD.musica2
+		time_per_bit = GlobalGD.time_per_bit2
+		speed = 300
+		will_time = (future_element_pos-default_element_pos)/speed
+		dif = ceili(will_time/time_per_bit)
+		tempo_atual = -3 -will_time
+		total_beats = GlobalGD.total_beats2
+	elif (GlobalGD.current_level == 2):
+		current_music = GlobalGD.musica3
+		time_per_bit = GlobalGD.time_per_bit3
+		speed = 300
+		will_time = (future_element_pos-default_element_pos)/speed
+		dif = ceili(will_time/time_per_bit)
+		tempo_atual = -3 -will_time
+		total_beats = GlobalGD.total_beats3
 func get_keys():
 	if Input.is_action_just_pressed("ui_left"):
 		l_btn.animar(1)
@@ -68,7 +86,19 @@ func errar():
 	vida -= GlobalGD.desconto
 
 func perder():
-	pass
+	if (vida <= 0):
+		get_tree().change_scene_to_file("res://scenes/GameOver.tscn")
+
+func vencer():
+	var score = (acertos*2 + meio_acertos)/total_beats
+	if (GlobalGD.current_level == 0):
+		GlobalGD.scores[0] = score
+	elif (GlobalGD.current_level == 1):
+		GlobalGD.scores[1] = score
+	elif (GlobalGD.current_level == 2):
+		GlobalGD.scores[2] = score
+	GlobalGD.salvar_estado_atual()
+	get_tree().change_scene_to_file("res://scenes/menu_inicial.tscn")
 
 func get_next_bit_time() -> float:
 	var current_song_time = audio_player.get_playback_position() + AudioServer.get_time_since_last_mix()
@@ -180,7 +210,12 @@ func _process(delta: float) -> void:
 	end_elements()
 	get_keys()
 	vibrate()
+	perder()
 
 
 func _on_timer_timeout() -> void:
 	is_generated = false
+
+
+func _on_audio_player_finished() -> void:
+	vencer()

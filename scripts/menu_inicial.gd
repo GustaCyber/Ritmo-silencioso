@@ -4,12 +4,14 @@ extends Control
 @onready var exit_btn = get_node("Exit_button")
 @onready var timer = get_node("Timer")
 @onready var titulo = get_node("Titulo")
+@onready var anim = get_node("AnimationTree/AnimationPlayer")
 
 var title_tex1 = load("res://assets/sprites/titulo1.png")
 var title_tex2 = load("res://assets/sprites/titulo2.png")
 var current_tex = 0
 
 func _ready() -> void:
+	anim.play("bounce")
 	titulo.texture = title_tex1
 	timer.start(2)
 
